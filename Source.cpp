@@ -61,16 +61,16 @@ void main()
 }
 template<typename T>void fill_rand(T arr[], T& n)
 {
-	for (int i = 0; i < n; i++)arr[i] = rand() % 100;
+	for (T i = 0; i < n; i++)arr[i] = rand() % 100;
 }
 template<typename T>void print_array(T arr[], T& n)
 {
-	for (int i = 0; i < n; i++)std::cout << arr[i] << "\t";
+	for (T i = 0; i < n; i++)std::cout << arr[i] << "\t";
 }
 template<typename T>void push_back(T* &arr, T& n, T value)
 {
-	int* buffer = new int[n + 1];
-	for (int i = 0; i < n; i++)buffer[i] = arr[i];
+	T* buffer = new T[n + 1];
+	for (T i = 0; i < n; i++)buffer[i] = arr[i];
 	delete[] arr;
 	arr = buffer;
 	arr[n] = value;
@@ -78,8 +78,8 @@ template<typename T>void push_back(T* &arr, T& n, T value)
 }
 template<typename T>void push_front(T* &arr, T& n, T value)
 {
-	int* buffer = new int[n + 1];
-	for (int i = 0; i < n; i++)buffer[i + 1] = arr[i];
+	T* buffer = new T[n + 1];
+	for (T i = 0; i < n; i++)buffer[i + 1] = arr[i];
 	delete[] arr;
 	arr = buffer;
 	arr[0] = value;
@@ -87,35 +87,35 @@ template<typename T>void push_front(T* &arr, T& n, T value)
 }
 template<typename T>void insert(T* &arr, T& n, int index, T value)
 {
-	int* buffer = new int[n + 1];
-	for (int i = 0; i < index; i++)buffer[i] = arr[i];
+	T* buffer = new T[n + 1];
+	for (T i = 0; i < index; i++)buffer[i] = arr[i];
 	buffer[index] = value;
-	for (int i = index; i < n; i++)buffer[i + 1] = arr[i];
+	for (T i = index; i < n; i++)buffer[i + 1] = arr[i];
 	delete[] arr;
 	arr = buffer;
 	n++;
 }
 template<typename T>void pop_back(T* &arr, T& n)
 {
-	int* buffer = new int[n];
-	for (int i = 0; i < n; i++)buffer[i] = arr[i];
+	T* buffer = new T[n];
+	for (T i = 0; i < n; i++)buffer[i] = arr[i];
 	delete[] arr;
 	arr = buffer;
 	n--;
 }
 template<typename T>void pop_front(T* &arr, T& n)
 {
-	int* buffer = new int[n];
-	for (int i = 0; i < n; i++)buffer[i] = arr[i + 1];
+	T* buffer = new T[n];
+	for (T i = 0; i < n; i++)buffer[i] = arr[i + 1];
 	delete[] arr;
 	arr = buffer;
 	n--;
 }
 template<typename T>void erase(T* &arr, T& n, int index)
 {
-	int* buffer = new int[n];
-	for (int i = 0; i < index; i++)buffer[i] = arr[i];
-	for (int i = index; i < n; i++)buffer[i] = arr[i + 1];
+	T* buffer = new T[n];
+	for (T i = 0; i < index; i++)buffer[i] = arr[i];
+	for (T i = index; i < n; i++)buffer[i] = arr[i + 1];
 	delete[] arr;
 	arr = buffer;
 	n--;
